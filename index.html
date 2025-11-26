@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museu Gamer - Ultimate Edition</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-light">
+
+    <audio id="sound-hover" src="https://assets.mixkit.co/sfx/preview/mixkit-modern-technology-select-3124.mp3"></audio>
+    <audio id="sound-click" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3"></audio>
+    <audio id="sound-secret" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3"></audio>
+
+    <div class="position-absolute top-0 end-0 p-3 user-area">
+        <button id="btn-login-trigger" class="btn btn-outline-light btn-sm">
+            <i class="fa-solid fa-user"></i> <span id="user-name-display">Entrar / Cadastro</span>
+        </button>
+        <button id="btn-logout" class="btn btn-sm btn-danger d-none" title="Sair">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+    </div>
+
+    <header class="text-center py-5 container">
+        <h1 class="display-4 fw-bold text-gradient" id="main-title">🕹️ Museu dos Videogames</h1>
+        <p class="lead text-secondary">A evolução dos consoles: 1972 - Futuro</p>
+
+        <div class="d-flex justify-content-center flex-wrap gap-2 mt-4" id="filter-container">
+            <button class="btn btn-outline-light active filter-btn" data-filter="all">Todos</button>
+            <button class="btn btn-outline-danger filter-btn" data-filter="Nintendo">Nintendo</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="Sony">Sony</button>
+            <button class="btn btn-outline-success filter-btn" data-filter="Microsoft">Microsoft</button>
+            <button class="btn btn-outline-warning filter-btn" data-filter="Sega">Sega</button>
+
+            <div class="vr bg-secondary mx-2"></div>
+
+            <button class="btn btn-warning fw-bold special-btn" id="btn-winners">
+                <i class="fa-solid fa-trophy"></i> Ver Vencedores
+            </button>
+            <button class="btn btn-info fw-bold special-btn" id="btn-generation">
+                <i class="fa-solid fa-layer-group"></i> Por Geração
+            </button>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-12 col-md-6">
+                <input type="text" id="search-input"
+                    class="form-control form-control-lg bg-dark text-light border-secondary"
+                    placeholder="🔍 Pesquise um console...">
+            </div>
+        </div>
+    </header>
+
+    <main class="container mb-5">
+        <div id="no-results" class="text-center d-none mb-5">
+            <h4 class="text-secondary">Nenhum console encontrado.</h4>
+        </div>
+        <div id="timeline-container" class="row g-4"></div>
+    </main>
+
+    <div class="modal fade" id="gameModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark border-secondary">
+
+                <div class="modal-header border-secondary pb-0">
+                    <h5 class="modal-title text-danger fw-bold" id="modal-title">Título</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <ul class="nav nav-tabs border-secondary px-3 mt-2" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active text-light" id="info-tab" data-bs-toggle="tab"
+                            data-bs-target="#tab-info-content" type="button">
+                            <i class="fa-solid fa-gamepad"></i> O Console
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link text-light" id="games-tab" data-bs-toggle="tab"
+                            data-bs-target="#tab-games-content" type="button">
+                            <i class="fa-solid fa-star"></i> Principais Jogos
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="modal-body text-center">
+                    <div class="tab-content" id="myTabContent">
+
+                        <div class="tab-pane fade show active" id="tab-info-content" role="tabpanel">
+                            <div class="position-relative mb-4 bg-black rounded d-flex justify-content-center align-items-center"
+                                style="height: 350px;">
+                                <button id="prev-btn"
+                                    class="btn btn-dark position-absolute start-0 ms-2 rounded-circle fs-4">❮</button>
+                                <img id="modal-img" src="" alt="Console" class="img-fluid"
+                                    style="max-height: 100%; object-fit: contain;">
+                                <button id="next-btn"
+                                    class="btn btn-dark position-absolute end-0 me-2 rounded-circle fs-4">❯</button>
+                                <span id="img-counter"
+                                    class="position-absolute bottom-0 end-0 mb-2 me-2 badge bg-danger">1/2</span>
+                            </div>
+                            <div class="text-start">
+                                <div class="mb-3">
+                                    <span id="modal-date"
+                                        class="badge bg-outline-danger border border-danger text-danger mb-2">Ano</span>
+                                    <h5 class="text-info">⚙️ Especificações:</h5>
+                                    <p id="modal-specs" class="text-secondary small">Specs...</p>
+                                </div>
+                                <div>
+                                    <h5 class="text-info">📜 História:</h5>
+                                    <p id="modal-history" class="text-light">História...</p>
+                                </div>
+                                <div>
+                                    <div class="mt-4 p-3 rounded bg-secondary bg-opacity-25 border border-secondary">
+                                        <h5 class="text-warning"><i class="fa-solid fa-lightbulb"></i> Curiosidades &
+                                            Fatos:</h5>
+                                        <p id="modal-curiosities" class="text-light mb-0 small fst-italic">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="tab-games-content" role="tabpanel">
+                            <h4 class="text-warning mb-4 mt-3">🏆 Hall da Fama</h4>
+                            <ul id="games-list" class="list-group list-group-flush text-start">
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer border-secondary">
+                    <a id="btn-buy" href="#" target="_blank" class="btn btn-success fw-bold me-2">🛒 Comprar</a>
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark border-secondary">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title text-white"><i class="fa-solid fa-user-astronaut"></i> Área do Gamer</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="login-form">
+                        <div class="mb-3">
+                            <label for="username" class="form-label text-secondary">Nome</label>
+                            <input type="text" class="form-control bg-dark text-light border-secondary" id="username"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="useremail" class="form-label text-secondary">Email</label>
+                            <input type="email" class="form-control bg-dark text-light border-secondary" id="useremail">
+                        </div>
+                        <button type="submit" class="btn btn-danger w-100 fw-bold">SALVAR</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-black text-center text-secondary py-4 mt-5 border-top border-secondary">
+        <div class="container">
+            <p class="mb-1">© 2025 <strong>Museu dos Videogames</strong>. Todos os direitos reservados.</p>
+            <p class="small mb-0">Desenvolvido por Murilo Yuki com auxilio de Ia.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
