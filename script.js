@@ -1,4 +1,4 @@
-// --- 1. DADOS DOS VIDEOGAMES (COMPLETO COM LINKS DE COMPRA) ---
+// --- 1. DADOS DOS VIDEOGAMES ---
 const museuData = [
     {
         id: 1,
@@ -7,13 +7,13 @@ const museuData = [
         geracao: 1,
         vencedor: true,
         ano: 1972,
-        linkCompra: "https://lista.mercadolivre.com.br/console-magnavox-odyssey", // eBay é melhor para itens de 1972
+        linkCompra: "https://www.ebay.com/sch/i.html?_nkw=magnavox+odyssey+console",
         imagens: [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Magnavox-Odyssey-Console-Set.png/1200px-Magnavox-Odyssey-Console-Set.png",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Magnavox-Odyssey-2-Console-Set.png/1200px-Magnavox-Odyssey-2-Console-Set.png"
         ],
         specs: "Sem CPU, sem som, lógica DTL.",
-        historia: "O pai de todos. Criado por Ralph Baer, não tinha som e seus gráficos eram apenas quadrados de luz. Os jogadores precisavam colar plásticos na tela da TV.",
+        historia: "O pai de todos. Criado por Ralph Baer, não tinha som e seus gráficos eram apenas quadrados de luz. Os jogadores precisavam colar plásticos na tela da TV para simular o campo de jogo.",
         curiosidades: "• O console não tinha som nenhum!<br>• Ele vinha com dados e cartas, pois era um híbrido de jogo de tabuleiro.<br>• Vendeu cerca de 350.000 unidades.",
         topJogos: ["Table Tennis", "Simon Says", "Haunted House", "Analogic"]
     },
@@ -24,13 +24,13 @@ const museuData = [
         geracao: 2,
         vencedor: true,
         ano: 1977,
-        linkCompra: "https://www.amazon.com.br/s?k=atari+flashback", // Versões modernas/retrô
+        linkCompra: "https://www.amazon.com.br/s?k=atari+flashback",
         imagens: [
             "https://upload.wikimedia.org/wikipedia/commons/0/02/Atari-2600-Wood-4Sw-Set.png",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Atari-2600-Jr-FL.png/1280px-Atari-2600-Jr-FL.png"
         ],
         specs: "CPU: MOS 6507, 128 bytes RAM.",
-        historia: "O console que transformou videogames em um fenômeno mundial. Popularizou o uso de cartuchos trocáveis.",
+        historia: "O console que transformou videogames em um fenômeno mundial. Popularizou o uso de cartuchos trocáveis. Reinou absoluto até o crash de 1983.",
         curiosidades: "• O jogo 'E.T.' foi enterrado no deserto por ser ruim.<br>• Custava $199 no lançamento.<br>• Originalmente chamava-se VCS.",
         topJogos: ["Pac-Man", "River Raid", "Space Invaders", "Pitfall!", "Enduro"]
     },
@@ -47,7 +47,7 @@ const museuData = [
             "https://upload.wikimedia.org/wikipedia/commons/4/4c/Nintendo-Famicom-Console-Set-FL.png"
         ],
         specs: "CPU: 8-bit Ricoh, 2KB RAM.",
-        historia: "Salvou a indústria americana de games após a crise de 83. Estabeleceu o padrão de qualidade Nintendo.",
+        historia: "Salvou a indústria americana de games após a crise de 83. Estabeleceu o padrão de qualidade Nintendo e introduziu o D-Pad em cruz.",
         curiosidades: "• No Japão chama-se Famicom.<br>• O robô R.O.B. foi usado para vender o console como brinquedo.<br>• Super Mario Bros 3 é um dos jogos mais vendidos da história.",
         topJogos: ["Super Mario Bros. 3", "The Legend of Zelda", "Metroid", "Mega Man 2", "Castlevania"]
     },
@@ -58,13 +58,13 @@ const museuData = [
         geracao: 3,
         vencedor: false,
         ano: 1985,
-        linkCompra: "https://www.amazon.com.br/s?k=master+system+tectoy", // Tectoy ainda vende!
+        linkCompra: "https://www.amazon.com.br/s?k=master+system+tectoy",
         imagens: [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sega-Master-System-Set.png/1200px-Sega-Master-System-Set.png",
             "https://www.loja.tectoy.com.br/wp-content/uploads/2024/09/product1.png"
         ],
         specs: "CPU: 8-bit Zilog Z80.",
-        historia: "Sucesso estrondoso no Brasil e Europa. Tinha gráficos melhores que o NES.",
+        historia: "Embora tenha perdido para o NES nos EUA, foi um fenômeno cultural no Brasil (via Tectoy) e na Europa, durando décadas.",
         curiosidades: "• Ainda é fabricado no Brasil pela Tectoy.<br>• Foi o primeiro a ter óculos 3D caseiros.<br>• Alex Kidd era o mascote antes do Sonic.",
         topJogos: ["Alex Kidd in Miracle World", "Sonic the Hedgehog (8-bit)", "Phantasy Star", "Wonder Boy III"]
     },
@@ -81,7 +81,7 @@ const museuData = [
             "https://upload.wikimedia.org/wikipedia/commons/b/be/Sega-Mega-Drive-JP-Mk1-Console-Set.png"
         ],
         specs: "CPU: 16-bit Motorola 68000.",
-        historia: "Conhecido como Genesis nos EUA. Atitude 'cool' e radical.",
+        historia: "Conhecido como Genesis nos EUA. Trouxe uma atitude 'cool' e radical para competir com a Nintendo, focado em jogos de arcade e esportes.",
         curiosidades: "• O processador de som é o mesmo de sintetizadores Yamaha.<br>• Michael Jackson trabalhou na trilha de Sonic 3.<br>• Teve muitos acessórios loucos como Sega CD e 32X.",
         topJogos: ["Sonic the Hedgehog 2", "Streets of Rage 2", "Mortal Kombat II", "Gunstar Heroes", "Shinobi III"]
     },
@@ -98,7 +98,7 @@ const museuData = [
             "https://www.copetti.org/images/consoles/snes/international.c1c3e550ebb7eceeb5713c069ab271bec1241cf33f788ff0fdf697be2a1ee8e2.png"
         ],
         specs: "Chip Sony SPC700, Gráficos Mode 7.",
-        historia: "A perfeição da era 16-bits. Biblioteca de RPGs lendária.",
+        historia: "A perfeição da era 16-bits. Introduziu os botões de ombro (L e R) e teve a biblioteca de RPGs mais lendária da história.",
         curiosidades: "• O design introduziu os botões L e R.<br>• O plástico de consoles antigos fica amarelo com o tempo.<br>• A parceria falhada com a Sony para um CD criou o PlayStation.",
         topJogos: ["Super Mario World", "Chrono Trigger", "Donkey Kong Country 2", "Zelda: A Link to the Past"]
     },
@@ -114,8 +114,8 @@ const museuData = [
             "https://upload.wikimedia.org/wikipedia/commons/9/90/Atari-Jaguar-Console-Set.png",
             "https://dutchgamedesign.wordpress.com/wp-content/uploads/2012/10/atarijaguarcd_t.gif"
         ],
-        specs: "64-bit (Chips 'Tom' e 'Jerry').",
-        historia: "O último suspiro da Atari. Prometeu 64 bits antes de todos, mas fracassou.",
+        specs: "64-bit (Chips 'Tom' e 'Jerry'), Mídia Cartucho/CD.",
+        historia: "O último suspiro da Atari. Prometeu ser o primeiro 64-bits do mercado, mas sofreu com controle complexo e falta de jogos.",
         curiosidades: "• O controle parecia um telefone.<br>• As carcaças foram vendidas para dentistas fazerem câmeras.<br>• Vendeu menos de 250 mil unidades.",
         topJogos: ["Alien vs Predator", "Tempest 2000", "Rayman", "Doom", "Iron Soldier"]
     },
@@ -131,8 +131,8 @@ const museuData = [
             "https://upload.wikimedia.org/wikipedia/commons/2/20/Sega-Saturn-Console-Set-Mk1.png",
             "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/84a4bbb1-399b-476f-8375-bc6abc7d2e0d/1920px-Sega-Saturn-JP-Mk2-Console-Set.png?t=1746183547"
         ],
-        specs: "Dual CPU Hitachi SH-2.",
-        historia: "Poderoso em 2D, mas difícil de programar para 3D.",
+        specs: "Dual CPU Hitachi SH-2 (32-bit).",
+        historia: "Uma máquina 2D incrível que sofreu para gerar 3D. Teve vida curta no ocidente, mas foi amado no Japão pelos jogos de arcade.",
         curiosidades: "• Lançado de surpresa nos EUA para tentar ganhar do PS1.<br>• Muito popular no Japão.<br>• Mestre em jogos de luta.",
         topJogos: ["Nights into Dreams", "Panzer Dragoon Saga", "Virtua Fighter 2", "Sega Rally"]
     },
@@ -148,8 +148,8 @@ const museuData = [
             "https://upload.wikimedia.org/wikipedia/commons/9/95/PSX-Console-wController.png",
             "https://applebygames.co.nz/wp-content/uploads/2022/06/IMG_0736-Photoroom-Medium.png"
         ],
-        specs: "32-bit, CD-ROM.",
-        historia: "A Sony dominou o mundo usando CDs.",
+        specs: "32-bit, CD-ROM, 3D Poligonal.",
+        historia: "A Sony mudou a indústria focando em CDs (armazenamento barato e massivo) e jogos cinematográficos, tirando a liderança da Nintendo.",
         curiosidades: "• Deveria ser um acessório do SNES.<br>• Vendeu mais de 100 milhões de unidades.<br>• Popularizou o DualShock (vibração).",
         topJogos: ["Final Fantasy VII", "Metal Gear Solid", "Castlevania: SOTN", "Resident Evil 2", "Gran Turismo"]
     },
@@ -165,8 +165,8 @@ const museuData = [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/N64-Console-Set.png/1200px-N64-Console-Set.png",
             "https://s2-techtudo.glbimg.com/Uj2-IahIUrUVZrhCdt5PhcceAx8=/0x0:695x554/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/q/z/VP97ExRc2qOj6yAm7bEQ/2015-11-26-64dd.png"
         ],
-        specs: "64-bit, Cartucho.",
-        historia: "Definiu como jogos 3D deveriam ser controlados.",
+        specs: "CPU: 8-bit Ricoh, 2KB RAM.",
+        historia: "Definiu como jogos 3D deveriam ser controlados com a alavanca analógica. Perdeu apoio de thirds por insistir em cartuchos caros.",
         curiosidades: "• Mario 64 ensinou o mundo a andar no espaço 3D.<br>• Usava cartuchos, o que era caro e afastou empresas.<br>• O controle 'tridente' é icônico.",
         topJogos: ["Super Mario 64", "Zelda: Ocarina of Time", "GoldenEye 007", "Star Fox 64", "Super Smash Bros."]
     },
@@ -183,7 +183,7 @@ const museuData = [
             "https://cdn.consolevariations.com/6192/sega-dreamcast-european-console-front-1572642419-37-transparent.webp"
         ],
         specs: "Hitachi SH-4, Modem Online.",
-        historia: "Pioneiro na internet e gráficos incríveis.",
+        historia: "O último console da Sega. Muito à frente de seu tempo, foi o primeiro a focar em jogatina online real nos consoles.",
         curiosidades: "• O Memory Card tinha uma tela LCD (VMU).<br>• O último console da Sega.<br>• Rodava Windows CE.",
         topJogos: ["Sonic Adventure 2", "Shenmue", "SoulCalibur", "Crazy Taxi", "Jet Set Radio"]
     },
@@ -199,8 +199,8 @@ const museuData = [
             "https://upload.wikimedia.org/wikipedia/commons/3/39/PS2-Versions.png",
             "https://images.tcdn.com.br/img/img_prod/1211726/playstation_2_slim_seminovo_277_1_cdad97bf064ac254c387a1da08a1ac61.png"
         ],
-        specs: "128-bit Emotion Engine, DVD.",
-        historia: "O videogame mais vendido da história.",
+        specs: "128-bit Emotion Engine, DVD Player.",
+        historia: "O videogame mais vendido da história (160 milhões). Além de jogos incríveis, era o DVD Player mais barato da época.",
         curiosidades: "• Era o DVD Player mais barato do mercado.<br>• Teve suporte a Linux.<br>• Vendeu mais de 155 milhões de unidades.",
         topJogos: ["GTA: San Andreas", "God of War II", "Shadow of the Colossus", "Metal Gear Solid 3", "Kingdom Hearts II"]
     },
@@ -217,9 +217,9 @@ const museuData = [
             "https://imagedelivery.net/-LSpQIg39J0gXmiDBooAYw/f7e009c4-f806-454c-469e-afc92904e800/public"
         ],
         specs: "Processador IBM Gekko, MiniDVD.",
-        historia: "Compacto e poderoso. Trouxe clássicos cult.",
+        historia: "Pequeno, roxo e com alça. Apesar de parecer brinquedo, era muito poderoso. Sofreu com a falta de suporte a DVDs de filme.",
         curiosidades: "• Tinha uma alça para carregar.<br>• Usava discos pequenos de 1.5GB.<br>• O controle é considerado um dos melhores.",
-        topJogos: ["Super Smash Bros. Melee", "Metroid Prime", "Resident Evil 4", "Luigi's Mansion"]
+        topJogos: ["Super Smash Bros. Melee", "Metroid Prime", "Resident Evil 4", "Luigi's Mansion", "Zelda: The Wind Waker"]
     },
     {
         id: 14,
@@ -234,7 +234,7 @@ const museuData = [
             "https://i0.wp.com/retrogamingbuilder.com/wp-content/uploads/2023/11/IMG_8551.png?fit=4032%2C2268&ssl=1"
         ],
         specs: "Intel Pentium III, HD interno.",
-        historia: "Introduziu Halo e a Xbox Live.",
+        historia: "A Microsoft entrou no jogo com um 'PC disfarçado'. Introduziu o HD interno e a revolução da Xbox Live.",
         curiosidades: "• O controle original 'Duke' era gigante.<br>• Foi o primeiro com HD interno.<br>• A Microsoft perdeu bilhões para entrar no mercado.",
         topJogos: ["Halo: Combat Evolved", "Halo 2", "Fable", "Forza Motorsport", "Star Wars: KOTOR"]
     },
@@ -250,8 +250,8 @@ const museuData = [
             "https://upload.wikimedia.org/wikipedia/commons/0/03/Xbox-360-Consoles-Infobox.png",
             "https://upload.wikimedia.org/wikipedia/commons/a/a8/Xbox-360-Pro-wController.png"
         ],
-        specs: "HD Graphics, Online.",
-        historia: "Definiu a era HD e o multiplayer online.",
+        specs: "HD Graphics, Online (Xbox Live).",
+        historia: "Definiu a geração HD. Popularizou conquistas (achievements) e o multiplayer online robusto. Sofreu com o 'Anel Vermelho da Morte'.",
         curiosidades: "• O problema das '3 Luzes Vermelhas' custou 1 bilhão à Microsoft.<br>• Popularizou as conquistas (GamerScore).<br>• O Kinect foi um sucesso estrondoso.",
         topJogos: ["Halo 3", "Gears of War 3", "Mass Effect 2", "Skyrim", "BioShock"]
     },
@@ -267,8 +267,8 @@ const museuData = [
             "https://www.copetti.org/images/consoles/ps3/original.ef1da38ba374252ffbad5d6c30133170973f1acb33b542ff36f2f525a8d4ef3d.png",
             "https://static.wikia.nocookie.net/dbzpro2matrix/images/4/40/PS3-slim-console.png/revision/latest/scale-to-width-down/3500?cb=20110108175521&path-prefix=pt"
         ],
-        specs: "Cell Processor, Blu-ray.",
-        historia: "Virou o jogo com exclusivos de peso. Introduziu o Blu-ray.",
+        specs: "Cell Processor, Leitor Blu-ray.",
+        historia: "Começou caro e complexo, mas virou o jogo com exclusivos de peso. Introduziu o Blu-ray para o mundo.",
         curiosidades: "• O processador Cell era usado em supercomputadores.<br>• O lançamento foi caro ($599).<br>• The Last of Us mostrou o poder final do console.",
         topJogos: ["The Last of Us", "Uncharted 2", "God of War III", "Metal Gear Solid 4", "LittleBigPlanet"]
     },
@@ -284,8 +284,8 @@ const museuData = [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Wii-Console.png/1200px-Wii-Console.png",
             "https://cdn.awsli.com.br/600x450/138/138431/produto/272415509/nintendowii-673841urco.jpeg"
         ],
-        specs: "Motion Control.",
-        historia: "Trouxe o público casual para os games.",
+        specs: "Motion Control (Sensores de Movimento).",
+        historia: "Ignorou os gráficos HD para focar na diversão. Quebrou barreiras atraindo avós e não-gamers para a sala.",
         curiosidades: "• Vendeu mais de 100 milhões.<br>• Wii Sports vinha junto e virou febre.<br>• O nome 'Wii' soa como 'Nós' (We) em inglês.",
         topJogos: ["Wii Sports", "Mario Kart Wii", "Super Mario Galaxy", "Zelda: Twilight Princess", "Super Smash Bros. Brawl"]
     },
@@ -302,7 +302,7 @@ const museuData = [
             "https://gmedia.playstation.com/is/image/SIEPDC/PS4_SLIM_Laying-down?$facebook$"
         ],
         specs: "AMD Jaguar 8-core.",
-        historia: "Venceu a geração com exclusivos incríveis.",
+        historia: "Focou puramente em jogos após os erros do PS3. Venceu a geração com facilidade e uma biblioteca de exclusivos imbatível.",
         curiosidades: "• Botão Share mudou a cultura de streaming.<br>• No Brasil custou R$ 4.000 no lançamento.<br>• Focou 100% em jogos, sem firulas de TV.",
         topJogos: ["God of War (2018)", "Spider-Man", "Bloodborne", "The Last of Us Part II", "Horizon Zero Dawn"]
     },
@@ -318,8 +318,8 @@ const museuData = [
             "https://upload.wikimedia.org/wikipedia/commons/2/2b/Microsoft-Xbox-One-Console-wKinect.png",
             "https://images.tcdn.com.br/img/img_prod/1211726/xbox_one_s_500_gb_seminovo_1339_1_6b8c5dcd45e03745ebecca642d8f1458.png"
         ],
-        specs: "AMD Jaguar, Multimídia.",
-        historia: "Criador do Game Pass. Começou mal, terminou bem.",
+        specs: "AMD Jaguar, Integração Multimídia.",
+        historia: "Começou focado em TV/Kinect, mas corrigiu a rota. Deixou como legado o Game Pass, o 'Netflix dos jogos'.",
         curiosidades: "• O Kinect era obrigatório no início.<br>• Criou o serviço Game Pass.<br>• Retrocompatibilidade salvou a reputação.",
         topJogos: ["Forza Horizon 4", "Halo 5: Guardians", "Gears 5", "Sea of Thieves", "Cuphead"]
     },
@@ -336,7 +336,7 @@ const museuData = [
             "https://upload.wikimedia.org/wikipedia/commons/b/b0/Nintendo_Switch_Lite_representation.png"
         ],
         specs: "Híbrido (Portátil/Mesa).",
-        historia: "Sucesso absoluto unificando o mercado.",
+        historia: "A ideia genial de jogar o mesmo jogo na TV e no ônibus. Unificou o mercado da Nintendo e se tornou um dos maiores sucessos da história.",
         curiosidades: "• Os cartuchos têm gosto ruim para crianças não engolirem.<br>• Joy-Cons destacáveis.<br>• Já vendeu mais de 130 milhões.",
         topJogos: ["Zelda: Breath of the Wild", "Mario Kart 8 Deluxe", "Super Mario Odyssey", "Animal Crossing: NH", "Super Smash Bros. Ultimate"]
     },
@@ -353,7 +353,7 @@ const museuData = [
             "https://gmedia.playstation.com/is/image/SIEPDC/ps5-pro-dualsense-image-block-01-en-16aug24?$facebook$"
         ],
         specs: "SSD NVMe, 4K Ray Tracing.",
-        historia: "Geração atual. Fim dos loadings.",
+        historia: "O fim das telas de carregamento. O controle DualSense trouxe imersão tátil de nova geração.",
         curiosidades: "• O maior console da história em tamanho.<br>• Controle DualSense tem feedback tátil incrível.<br>• Placas laterais customizáveis.",
         topJogos: ["Spider-Man 2", "God of War Ragnarok", "Demon's Souls", "Ratchet & Clank: Rift Apart", "Final Fantasy XVI"]
     },
@@ -369,28 +369,28 @@ const museuData = [
             "https://cms-assets.xboxservices.com/assets/bc/40/bc40fdf3-85a6-4c36-af92-dca2d36fc7e5.png?n=642227_Hero-Gallery-0_A1_857x676.png",
             "https://cms-assets.xboxservices.com/assets/bf/b0/bfb06f23-4c87-4c58-b4d9-ed25d3a739b9.png?n=389964_Hero-Gallery-0_A1_857x676.png"
         ],
-        specs: "12 TFLOPS, SSD NVMe.",
-        historia: "O console mais poderoso da Microsoft.",
+        specs: "12 TFLOPS GPU, SSD NVMe.",
+        historia: "A torre de poder da Microsoft. Foca em rodar jogos antigos e novos com a melhor performance possível e carregamento instantâneo.",
         curiosidades: "• Quick Resume permite trocar de jogo em segundos.<br>• Series S é uma versão digital mais barata.<br>• Design de 'geladeira' virou meme (e depois produto real).",
         topJogos: ["Starfield", "Forza Motorsport", "Halo Infinite", "Hi-Fi Rush", "Senua's Saga: Hellblade II"]
     },
     {
         id: 23,
-        nome: "Nintendo Switch 2",
+        nome: "Nintendo Switch 2 ",
         fabricante: "Nintendo",
         geracao: 10,
         vencedor: false,
         ano: 2025,
-        linkCompra: "https://www.google.com/search?q=nintendo+switch+2+news", // Link de notícias
+        linkCompra: "https://www.google.com/search?q=nintendo+switch+2+news",
         imagens: [
             "https://static.wikia.nocookie.net/nintendo/images/b/b2/Nintendo_Switch_2.png/revision/latest?cb=20250404152739&path-prefix=en",
             "https://images.tcdn.com.br/img/img_prod/1211726/nintendo_switch_2_edicao_padrao_1842_1_e62c35067446a22b6e077cabbae5f912.png"
         ],
-        specs: "Híbrido, DLSS 4K.",
-        historia: "O futuro da Nintendo (Rumores).",
+        specs: "Híbrido (Portátil/Mesa).",
+        historia: "Sucessor do nintendo switch tradicional, traz uma melhor perfomace dentro e fora de casa, seus controles também podem ser utilizados como mouse.",
         curiosidades: "• Deve ter tela de 8 polegadas.<br>• Controles magnéticos.<br>• Retrocompatibilidade esperada.",
         topJogos: ["Metroid Prime 4", "Mario Kart 9 (Rumor)", "Novo Mario 3D", "Pokémon Gen 10", "Zelda Remake"]
-    }
+    },
 ];
 
 // --- 2. VARIÁVEIS E ESTADO ---
@@ -419,23 +419,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalImg = document.getElementById('modal-img');
     const counter = document.getElementById('img-counter');
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const gamesList = document.getElementById('games-list'); 
-    const modalCuriosities = document.getElementById('modal-curiosities'); // SELETOR CURIOSIDADES
+    const gamesList = document.getElementById('games-list'); // LISTA DE JOGOS NO MODAL
+    const modalCuriosities = document.getElementById('modal-curiosities'); // CURIOSIDADES NO MODAL
     
+    // Botões Especiais
     const btnWinners = document.getElementById('btn-winners');
     const btnGeneration = document.getElementById('btn-generation');
 
+    // Login e Tema
     const btnLoginTrigger = document.getElementById('btn-login-trigger');
     const btnLogout = document.getElementById('btn-logout');
     const loginModalElement = document.getElementById('loginModal');
     const loginForm = document.getElementById('login-form');
     const userNameDisplay = document.getElementById('user-name-display');
+    const themeToggleBtn = document.getElementById('theme-toggle');
 
+    // Sons
     const audioHover = document.getElementById('sound-hover');
     const audioClick = document.getElementById('sound-click');
     const audioSecret = document.getElementById('sound-secret');
 
     if (!container) return;
+
+    // --- FUNÇÕES AUXILIARES ---
 
     const playSound = (audio) => {
         if(audio) {
@@ -444,6 +450,41 @@ document.addEventListener('DOMContentLoaded', () => {
             audio.play().catch(() => {});
         }
     };
+
+    // --- TEMA (LIGHT/DARK) ---
+    const body = document.body;
+    const themeIcon = themeToggleBtn.querySelector('i');
+
+    const aplicarTema = (isLight) => {
+        if (isLight) {
+            body.classList.add('light-mode');
+            body.classList.remove('bg-dark', 'text-light');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        } else {
+            body.classList.remove('light-mode');
+            body.classList.add('bg-dark', 'text-light');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+    };
+
+    // Verificar preferência salva
+    if (localStorage.getItem('siteTheme') === 'light') {
+        aplicarTema(true);
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+        playSound(audioClick);
+        const isLightMode = body.classList.contains('light-mode');
+        if (isLightMode) {
+            aplicarTema(false);
+            localStorage.setItem('siteTheme', 'dark');
+        } else {
+            aplicarTema(true);
+            localStorage.setItem('siteTheme', 'light');
+        }
+    });
 
     // --- LOGIN ---
     const updateLoginUI = () => {
@@ -522,7 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnGeneration.classList.remove('active');
     };
 
-    // --- MODAL E ABAS ---
+    // --- MODAL ---
     const abrirModal = (item) => {
         if (!modalBootstrap) modalBootstrap = new bootstrap.Modal(modalElement);
 
@@ -531,12 +572,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modal-specs').innerText = item.specs;
         document.getElementById('modal-history').innerText = item.historia;
         
-        // CURIOSIDADES (SEGURO)
+        // CURIOSIDADES
         if(modalCuriosities) {
-            modalCuriosities.innerHTML = item.curiosidades || "Sem curiosidades cadastradas.";
+            modalCuriosities.innerHTML = item.curiosidades || "Sem curiosidades.";
         }
 
-        // JOGOS (SEGURO)
+        // JOGOS
         if(gamesList) {
             gamesList.innerHTML = ''; 
             if (item.topJogos && item.topJogos.length > 0) {
@@ -551,7 +592,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // BOTÃO DE COMPRA (COM LINK ESPECÍFICO)
+        // LINK DE COMPRA
         if(btnBuy) {
             if (item.linkCompra) {
                 btnBuy.href = item.linkCompra;
@@ -564,7 +605,6 @@ document.addEventListener('DOMContentLoaded', () => {
         indiceAtual = 0;
         atualizarImagem();
         
-        // Reseta aba
         const firstTab = document.querySelector('#info-tab');
         if(firstTab) new bootstrap.Tab(firstTab).show();
 
