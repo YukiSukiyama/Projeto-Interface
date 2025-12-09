@@ -426,6 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Botões Especiais
     const btnWinners = document.getElementById('btn-winners');
     const btnGeneration = document.getElementById('btn-generation');
+    const btnFavorites = document.getElementById('btn-favorites'); // NOVO
 
     // Login e Tema
     const btnLoginTrigger = document.getElementById('btn-login-trigger');
@@ -572,6 +573,7 @@ document.addEventListener('DOMContentLoaded', () => {
         filterButtons.forEach(b => b.classList.remove('active'));
         btnWinners.classList.remove('active');
         btnGeneration.classList.remove('active');
+        if(btnFavorites) btnFavorites.classList.remove('active');
     };
 
     // --- MODAL E ABAS ---
@@ -647,6 +649,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="fav-btn ${isFav ? 'active' : ''}" data-id="${item.id}">
                     <i class="${isFav ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
                 </button>
+                
                 <img src="${imgUrl}" class="card-img-top" alt="${item.nome}" loading="lazy">
                 <div class="card-body d-flex flex-column text-center text-light">
                     <h4 class="card-title fw-bold text-danger">${item.nome}</h4>
@@ -751,6 +754,40 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 btnGeneration.classList.add('active');
                 renderizarPorGeracao();
+            }
+        });
+    }
+
+    // --- BOTÃO MEUS FAVORITOS (CORRIGIDO) ---
+    if (btnFavorites) {
+        btnFavorites.addEventListener('click', () => {
+            playSound(audioClick);
+            
+            // Verifica se o botão já estava ativo
+            const isActive = btnFavorites.classList.contains('active');
+            
+            // Limpa os outros botões
+            resetButtons(); 
+
+            if (isActive) {
+                // Se já estava ativo, desliga e mostra tudo de novo
+                renderizarGaleria(museuData);
+            } else {
+                // Se a lista de favoritos estiver vazia, avisa o usuário
+                if (favoritos.length === 0) {
+                    alert("Você ainda não marcou nenhum favorito! Clique nos corações ❤️ primeiro.");
+                    renderizarGaleria(museuData);
+                    return;
+                }
+
+                // Liga o botão visualmente
+                btnFavorites.classList.add('active');
+                
+                // --- A CORREÇÃO ESTÁ AQUI ---
+                // Antes estava "favorites", agora é "favoritos" (igual à variável lá de cima)
+                const listaFavoritos = museuData.filter(item => favoritos.includes(item.id));
+                
+                renderizarGaleria(listaFavoritos);
             }
         });
     }
