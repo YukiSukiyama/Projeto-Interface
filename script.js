@@ -353,7 +353,7 @@ const museuData = [
             "https://gmedia.playstation.com/is/image/SIEPDC/ps5-pro-dualsense-image-block-01-en-16aug24?$facebook$"
         ],
         specs: "SSD NVMe, 4K Ray Tracing.",
-        historia: "O fim das telas de carregamento. O controle DualSense trouxe imersão tátil de nova geração.",
+        historia: "Geração atual. Fim dos loadings. O controle DualSense trouxe imersão tátil de nova geração.",
         curiosidades: "• O maior console da história em tamanho.<br>• Controle DualSense tem feedback tátil incrível.<br>• Placas laterais customizáveis.",
         topJogos: ["Spider-Man 2", "God of War Ragnarok", "Demon's Souls", "Ratchet & Clank: Rift Apart", "Final Fantasy XVI"]
     },
@@ -421,6 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const gamesList = document.getElementById('games-list'); // LISTA DE JOGOS NO MODAL
     const modalCuriosities = document.getElementById('modal-curiosities'); // CURIOSIDADES NO MODAL
+    const contactForm = document.getElementById('contact-form');
     
     // Botões Especiais
     const btnWinners = document.getElementById('btn-winners');
@@ -450,6 +451,16 @@ document.addEventListener('DOMContentLoaded', () => {
             audio.play().catch(() => {});
         }
     };
+
+    // --- CONTATO ---
+    if(contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            playSound(audioSecret);
+            alert("✅ Mensagem enviada com sucesso! Obrigado pelo contato.");
+            contactForm.reset();
+        });
+    }
 
     // --- TEMA (LIGHT/DARK) ---
     const body = document.body;
@@ -563,7 +574,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnGeneration.classList.remove('active');
     };
 
-    // --- MODAL ---
+    // --- MODAL E ABAS ---
     const abrirModal = (item) => {
         if (!modalBootstrap) modalBootstrap = new bootstrap.Modal(modalElement);
 
@@ -574,7 +585,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // CURIOSIDADES
         if(modalCuriosities) {
-            modalCuriosities.innerHTML = item.curiosidades || "Sem curiosidades.";
+            modalCuriosities.innerHTML = item.curiosidades || "Sem curiosidades cadastradas.";
         }
 
         // JOGOS
