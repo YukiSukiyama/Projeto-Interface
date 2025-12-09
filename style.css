@@ -87,7 +87,6 @@
 .konami-mode .card { border-color: #0f0 !important; box-shadow: 0 0 10px #0f0; background-color: #001100; }
 .konami-mode .text-danger, .konami-mode .text-info, .konami-mode h1, .konami-mode h4 { color: #0f0 !important; }
 
-/* CONTATO */
 #contact-form { box-shadow: 0 0 20px rgba(0,0,0,0.5); }
 #contact-form input, #contact-form textarea { transition: 0.3s; }
 #contact-form input:focus, #contact-form textarea:focus {
@@ -95,7 +94,6 @@
     box-shadow: 0 0 10px rgba(0, 210, 255, 0.3); outline: none;
 }
 
-/* REFERÊNCIAS */
 .ref-link { background-color: #1e1e24; border: 1px solid #444; transition: all 0.3s ease; }
 .ref-link:hover {
     background-color: #2a2a35; border-color: #00d2ff;
