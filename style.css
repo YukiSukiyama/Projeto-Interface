@@ -1,12 +1,10 @@
-/* --- CONFIGURAÇÕES GERAIS (DARK MODE PADRÃO) --- */
 body {
     background-color: #121212;
     color: #f0f0f0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: background-color 0.3s, color 0.3s; /* Suaviza a troca de tema */
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Título com Gradiente Neon */
 .text-gradient {
     background: linear-gradient(90deg, #ff0055, #00d2ff);
     -webkit-background-clip: text;
@@ -15,404 +13,259 @@ body {
     color: transparent;
 }
 
-/* Área do Usuário (Login/Tema) */
-.user-area {
-    z-index: 1000;
+.user-area { z-index: 1000; }
+
+
+.bg-dark-transparent {
+    background-color: rgba(30, 30, 36, 0.6);
+    backdrop-filter: blur(10px);
 }
 
-/* Barra de Pesquisa Neon */
+#search-input {
+    background-color: #121212; border: 1px solid #444;
+    color: #fff; transition: 0.3s; font-size: 1.1rem;
+}
 #search-input:focus {
-    background-color: #222;
-    color: #fff;
-    border-color: #ff0055;
-    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
-    outline: none;
+    background-color: #000; border-color: #00d2ff;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.2); color: #fff; outline: none;
+}
+#search-input::placeholder { color: #666; }
+
+
+.btn-tag {
+    background-color: transparent; border: 1px solid #444;
+    color: #aaa; border-radius: 50px; padding: 5px 20px;
+    font-size: 0.9rem; transition: 0.3s;
+}
+.btn-tag:hover { background-color: #333; color: #fff; transform: translateY(-2px); }
+.btn-tag.active {
+    background-color: #fff; color: #000; border-color: #fff;
+    font-weight: bold; box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
 
-/* --- CARDS DOS CONSOLES --- */
+
+.btn-mode-special {
+    background-color: #222; border: 1px solid #444;
+    color: #fff; border-radius: 8px; padding: 6px 15px;
+    font-size: 0.9rem; transition: 0.3s;
+}
+.btn-mode-special:hover { transform: translateY(-2px); }
+.btn-mode-special.winner.active, .btn-mode-special.winner:hover { background-color: #ffd700; color: #000; border-color: #ffd700; }
+.btn-mode-special.gen.active, .btn-mode-special.gen:hover { background-color: #00d2ff; color: #000; border-color: #00d2ff; }
+.btn-mode-special.fav.active, .btn-mode-special.fav:hover { background-color: #ff0055; color: #fff; border-color: #ff0055; }
+
 .card {
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    background-color: #1e1e24;
-    border: 1px solid #333;
-    position: relative;
+    background-color: #1e1e24; border: 1px solid #333; position: relative;
 }
-
 .card:hover {
-    transform: translateY(-8px);
-    border-color: #ff0055 !important;
+    transform: translateY(-8px); border-color: #ff0055 !important;
     box-shadow: 0 10px 30px rgba(255, 0, 85, 0.2);
 }
-
 .card-img-top {
-    height: 180px;
-    object-fit: contain;
-    background-color: #000; /* Fundo preto na foto do card */
-    padding: 10px;
-    border-bottom: 1px solid #333;
+    height: 180px; object-fit: contain;
+    background-color: #000; padding: 10px; border-bottom: 1px solid #333;
 }
 
-/* Botão Favorito (Coração) */
+
+#timeline-container.row { row-gap: 20px; }
+
+
 .fav-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.6);
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-    z-index: 10;
+    position: absolute; top: 10px; right: 10px;
+    background: rgba(0, 0, 0, 0.6); border: none; color: #fff;
+    font-size: 1.5rem; cursor: pointer; border-radius: 50%;
+    width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+    transition: 0.3s; z-index: 10;
 }
+.fav-btn:hover { background: #fff; color: #ff0055; }
+.fav-btn.active { color: #ff0055; animation: pulse 0.5s; }
 
-.fav-btn:hover {
-    background: #fff;
-    color: #ff0055;
-}
-
-.fav-btn.active {
-    color: #ff0055;
-    animation: pulse 0.5s;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.3); }
-    100% { transform: scale(1); }
-}
-
-/* --- MODAL E ABAS --- */
-/* Botões de Navegação (Setas) */
-#prev-btn, #next-btn {
-    opacity: 0.6;
-    z-index: 10;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #444;
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-}
-
-#prev-btn:hover, #next-btn:hover {
-    opacity: 1;
-    background-color: #ff0055;
-    border-color: #ff0055;
-}
-
-/* Abas de Navegação */
-.nav-tabs .nav-link {
-    border: none;
-    color: #aaa;
-    transition: 0.3s;
-}
-
-.nav-tabs .nav-link:hover {
-    color: #fff;
-}
-
-.nav-tabs .nav-link.active {
-    background-color: transparent;
-    color: #ff0055 !important;
-    border-bottom: 3px solid #ff0055;
-    font-weight: bold;
-}
-
-/* Lista de Jogos */
-.game-item {
-    background-color: #222;
-    border: 1px solid #444;
-    color: #fff;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    padding: 15px;
-    transition: 0.2s;
-    display: flex;
-    align-items: center;
-}
-
-.game-item:hover {
-    background-color: #333;
-    border-color: #00d2ff;
-    transform: translateX(5px);
-}
-
-.game-icon {
-    color: #ffd700;
-    margin-right: 15px;
-    font-size: 1.2rem;
-}
-
-/* --- ELEMENTOS ESPECIAIS --- */
-
-/* Título de Geração */
 .gen-title {
-    width: 100%;
-    border-bottom: 2px solid #444;
-    padding-bottom: 10px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    color: #00d2ff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    width: 100%; border-bottom: 2px solid #444;
+    padding-bottom: 10px; margin-top: 40px; margin-bottom: 20px;
+    color: #00d2ff; text-transform: uppercase; letter-spacing: 2px;
 }
-
-/* Card Vencedor */
-.winner-card {
-    border: 2px solid #ffd700 !important;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3) !important;
-}
-
+.winner-card { border: 2px solid #ffd700 !important; box-shadow: 0 0 20px rgba(255, 215, 0, 0.3) !important; }
 .winner-badge {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #ffd700;
-    color: #000;
-    font-weight: bold;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-    z-index: 20;
+    position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+    background: #ffd700; color: #000; font-weight: bold;
+    padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); z-index: 20;
 }
 
-/* Formulário de Contato */
-#contact-form {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
+#contact-form { box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
 #contact-form input:focus, #contact-form textarea:focus {
-    background-color: #222;
-    color: #fff;
-    border-color: #00d2ff;
-    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
-    outline: none;
+    background-color: #222; color: #fff; border-color: #00d2ff;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3); outline: none;
 }
 
-/* Referências */
-.ref-link {
-    background-color: #1e1e24;
-    border: 1px solid #444;
-    transition: all 0.3s ease;
-}
-
+.ref-link { background-color: #1e1e24; border: 1px solid #444; transition: all 0.3s ease; }
 .ref-link:hover {
-    background-color: #2a2a35;
-    border-color: #00d2ff;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.1);
+    background-color: #2a2a35; border-color: #00d2ff;
+    transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 210, 255, 0.1);
+}
+.ref-link i { transition: 0.3s; }
+.ref-link:hover i { color: #ff0055 !important; transform: scale(1.1); }
+
+#prev-btn, #next-btn {
+    opacity: 0.6; z-index: 10; width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid #444; background-color: rgba(0,0,0,0.5); color: white;
+}
+#prev-btn:hover, #next-btn:hover { opacity: 1; background-color: #ff0055; border-color: #ff0055; }
+.nav-tabs .nav-link { border: none; color: #aaa; transition: 0.3s; }
+.nav-tabs .nav-link:hover { color: #fff; }
+.nav-tabs .nav-link.active {
+    background-color: transparent; color: #ff0055 !important;
+    border-bottom: 3px solid #ff0055; font-weight: bold;
+}
+.game-item {
+    background-color: #222; border: 1px solid #444; color: #fff;
+    margin-bottom: 10px; border-radius: 8px; padding: 15px;
+    transition: 0.2s; display: flex; align-items: center;
+}
+.game-item:hover { background-color: #333; border-color: #00d2ff; transform: translateX(5px); }
+.game-icon { color: #ffd700; margin-right: 15px; font-size: 1.2rem; }
+
+body.light-mode { background-color: #f4f6f8; color: #1a1a1a !important; }
+body.light-mode header, body.light-mode footer {
+    background-color: #ffffff !important; color: #333 !important;
+    border-color: #e0e0e0 !important; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+body.light-mode .bg-dark-transparent {
+    background-color: rgba(255, 255, 255, 0.7) !important; border-color: #ccc !important;
+}
+body.light-mode .text-gradient {
+    background: linear-gradient(90deg, #d60045, #0056b3); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent !important;
+}
+body.light-mode .card {
+    background-color: #ffffff; border: 1px solid #e0e0e0; color: #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+body.light-mode .card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-color: #d60045 !important; transform: translateY(-5px);
+}
+body.light-mode .card-img-top { background-color: #fff; border-bottom: 1px solid #eee; }
+body.light-mode .card-body .text-light, body.light-mode .text-light { color: #ffffff !important; }
+body.light-mode .text-secondary { color: #666 !important; }
+body.light-mode .text-info { color: #0056b3 !important; }
+body.light-mode .text-warning { color: #d9a406 !important; }
+
+body.light-mode #search-input {
+    background-color: #ffffff !important; color: #333 !important; border: 1px solid #ccc !important;
+}
+body.light-mode #search-input:focus {
+    border-color: #d60045 !important; box-shadow: 0 0 0 0.25rem rgba(214, 0, 69, 0.1);
+}
+body.light-mode #search-input::placeholder { color: #999 !important; }
+
+body.light-mode .btn-tag { border-color: #ccc; color: #666; }
+body.light-mode .btn-tag:hover { background-color: #eee; color: #333; }
+body.light-mode .btn-tag.active { background-color: #333; color: #fff; border-color: #333; }
+body.light-mode .fa-search { color: #999 !important; }
+body.light-mode .btn-outline-light {
+    color: #555 !important;
+    border-color: #ccc !important;
+    background-color: #fff !important;
+}
+body.light-mode .btn-outline-light:hover {
+    background-color: #333 !important;
+    color: #fff !important;
 }
 
-.ref-link i {
-    transition: 0.3s;
+body.light-mode input.form-control, body.light-mode textarea.form-control {
+    background-color: #f8f9fa; color: #333; border: 1px solid #ced4da;
 }
+body.light-mode input.form-control:focus, body.light-mode textarea.form-control:focus {
+    background-color: #fff; border-color: #d60045;
+}
+body.light-mode .modal-content { background-color: #fff; color: #333; border: none; }
+body.light-mode .modal-header .btn-close { filter: none; }
+body.light-mode .position-relative.bg-black { background-color: #e9ecef !important; border: 1px solid #dee2e6; }
+body.light-mode .nav-tabs .nav-link { color: #666; }
+body.light-mode .nav-tabs .nav-link:hover { color: #0056b3; }
+body.light-mode .nav-tabs .nav-link.active { color: #d60045 !important; border-bottom-color: #d60045; }
+body.light-mode .game-item { background-color: #fff; border: 1px solid #e0e0e0; color: #333; }
+body.light-mode .game-item:hover { background-color: #f1f3f5; border-color: #0056b3; }
+body.light-mode .bg-secondary.bg-opacity-25 { background-color: #080808 !important; border: 1px solid #e0e0e0 !important; }
+body.light-mode #contact-form { background-color: #fff !important; color: #333; border: 1px solid #e0e0e0 !important; }
+body.light-mode .ref-link { background-color: #fff; border: 1px solid #e0e0e0; }
+body.light-mode .ref-link:hover { background-color: #f8f9fa; border-color: #d60045; }
+body.light-mode .ref-link i { color: #555 !important; }
 
-.ref-link:hover i {
-    color: #ff0055 !important;
-    transform: scale(1.1);
+html.konami-mode,
+html.konami-mode body,
+html.konami-mode body.light-mode { 
+    background-color: #000 !important; 
+    color: #0f0 !important; 
+    font-family: 'Courier New', monospace !important;
 }
-
-/* Konami Code (Modo Hacker) */
-.konami-mode body {
-    background-color: #000 !important;
-    font-family: 'Courier New', monospace;
+html.konami-mode .text-gradient {
+    background: none !important;
+    -webkit-text-fill-color: #0f0 !important;
+    color: #0f0 !important;
+    text-shadow: 0 0 5px #0f0 !important;
 }
-.konami-mode .card {
+html.konami-mode h1, html.konami-mode h2, html.konami-mode h3,
+html.konami-mode p, html.konami-mode span, html.konami-mode i,
+html.konami-mode button, html.konami-mode input, html.konami-mode textarea,
+html.konami-mode .text-secondary, html.konami-mode .text-info, 
+html.konami-mode .text-warning, html.konami-mode .text-danger, 
+html.konami-mode .text-light, html.konami-mode .nav-link, 
+html.konami-mode ::placeholder, html.konami-mode .btn-close {
+    color: #0f0 !important;
+    background: none !important;
     border-color: #0f0 !important;
-    box-shadow: 0 0 10px #0f0;
-    background-color: #001100;
+    text-shadow: none !important;
 }
-.konami-mode .text-danger, .konami-mode .text-info, .konami-mode h1, .konami-mode h4 {
+html.konami-mode .card,
+html.konami-mode .control-panel,
+html.konami-mode .modal-content,
+html.konami-mode .game-item,
+html.konami-mode #contact-form,
+html.konami-mode .ref-link,
+html.konami-mode .bg-secondary,
+html.konami-mode .card-img-top,
+html.konami-mode .modal-body,
+html.konami-mode .modal-footer,
+html.konami-mode .modal-header,
+html.konami-mode header,
+html.konami-mode footer {
+    background-color: #000 !important;
+    border: 1px solid #0f0 !important;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.4) !important;
+    border-radius: 0 !important;
+    color: #0f0 !important;
+}
+html.konami-mode .card:hover {
+    background-color: #000 !important;
+    box-shadow: 0 0 20px #0f0 !important;
+    transform: none !important;
+}
+html.konami-mode #search-input,
+html.konami-mode input.form-control,
+html.konami-mode textarea.form-control {
+    background-color: #000 !important;
+    border: 1px solid #0f0 !important;
+    color: #0f0 !important;
+    box-shadow: none !important;
+}
+html.konami-mode .btn,
+html.konami-mode .btn-tag,
+html.konami-mode .btn-mode-special,
+html.konami-mode .fav-btn {
+    border: 1px solid #0f0 !important;
+    background-color: #000 !important;
     color: #0f0 !important;
 }
 
-/* Scrollbar Personalizada */
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-track {
-    background: #121212;
-}
-::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #ff0055;
+html.konami-mode .btn:hover {
+    background-color: #0f0 !important;
+    color: #000 !important;
 }
 
-
-/* =========================================
-   --- MODO CLARO PREMIUM (LIGHT MODE) --- 
-   ========================================= */
-
-body.light-mode {
-    background-color: #f4f6f8; /* Cinza azulado suave */
-    color: #1a1a1a !important; /* Texto quase preto */
-}
-
-/* Header e Footer Claros */
-body.light-mode header,
-body.light-mode footer {
-    background-color: #ffffff !important;
-    color: #333 !important;
-    border-color: #e0e0e0 !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-}
-
-/* Ajuste do Título Gradiente no Claro */
-body.light-mode .text-gradient {
-    background: linear-gradient(90deg, #d60045, #0056b3); /* Cores mais escuras/sólidas */
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent !important;
-}
-
-/* Cards no Modo Claro */
-body.light-mode .card {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    color: #333;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-body.light-mode .card:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    border-color: #d60045 !important;
-    transform: translateY(-5px);
-}
-
-/* Fundo da imagem do card no modo claro */
-body.light-mode .card-img-top {
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-}
-
-/* Textos dentro do Card */
-body.light-mode .card-body .text-light,
-body.light-mode .text-light {
-    color: #333 !important;
-}
-
-body.light-mode .text-secondary {
-    color: #666 !important;
-}
-
-/* Cores de Destaque no Modo Claro */
-body.light-mode .text-info {
-    color: #0056b3 !important; /* Azul Marinho */
-}
-
-body.light-mode .text-warning {
-    color: #d9a406 !important; /* Dourado Escuro */
-}
-
-/* Inputs (Busca e Contato) */
-body.light-mode input.form-control,
-body.light-mode textarea.form-control {
-    background-color: #f8f9fa;
-    color: #333;
-    border: 1px solid #ced4da;
-}
-
-body.light-mode input.form-control:focus,
-body.light-mode textarea.form-control:focus {
-    background-color: #fff;
-    border-color: #d60045;
-    box-shadow: 0 0 0 0.25rem rgba(214, 0, 69, 0.2);
-}
-
-/* Modal no Modo Claro */
-body.light-mode .modal-content {
-    background-color: #fff;
-    color: #333;
-    border: none;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-}
-
-body.light-mode .modal-header .btn-close {
-    filter: none; /* Deixa o X escuro */
-}
-
-/* Fundo da foto dentro do Modal */
-body.light-mode .position-relative.bg-black {
-    background-color: #e9ecef !important;
-    border: 1px solid #dee2e6;
-}
-
-/* Abas do Modal */
-body.light-mode .nav-tabs .nav-link {
-    color: #666;
-}
-
-body.light-mode .nav-tabs .nav-link:hover {
-    color: #0056b3;
-}
-
-body.light-mode .nav-tabs .nav-link.active {
-    color: #d60045 !important;
-    border-bottom-color: #d60045;
-}
-
-/* Botões do Topo */
-body.light-mode .user-area .btn-outline-light {
-    color: #555;
-    border-color: #ccc;
-    background-color: #fff;
-}
-
-body.light-mode .user-area .btn-outline-light:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-/* Listas (Jogos e Curiosidades) */
-body.light-mode .game-item {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    color: #333;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-}
-
-body.light-mode .game-item:hover {
-    background-color: #f1f3f5;
-    border-color: #0056b3;
-}
-
-body.light-mode .bg-secondary.bg-opacity-25 {
-    background-color: #f1f3f5 !important;
-    border: 1px solid #e0e0e0 !important;
-}
-
-/* Formulário de Contato */
-body.light-mode #contact-form {
-    background-color: #fff !important;
-    color: #333;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    border: 1px solid #e0e0e0 !important;
-}
-
-/* Referências */
-body.light-mode .ref-link {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-}
-
-body.light-mode .ref-link:hover {
-    background-color: #f8f9fa;
-    border-color: #d60045;
-}
-
-body.light-mode .ref-link i {
-    color: #555 !important;
-}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #121212; }
+::-webkit-scrollbar-thumb { background: #444; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #ff0055; }
